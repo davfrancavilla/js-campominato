@@ -1,6 +1,7 @@
 var difficulty;
 var userNumbers = [];
 
+// permetto all'utente di scegliere la difficolta del gioco
 do {
     difficulty = parseInt(prompt('Segli la difficoltà: 0, 1 o 2'));
     switch (difficulty) {
@@ -21,11 +22,12 @@ do {
     }
 } while (difficulty<0 || difficulty>2);
 
-
+// creo l'array con i numeri del computer
 function createComputerArray(max){
     var computerNumbers = [];
+    var n;
     while (computerNumbers.length<16) {
-        var n = getRandom(1,max);
+        n = getRandom(1,max);
         if (!isRepeated(computerNumbers,n)){
             computerNumbers.push(n);
         }
@@ -33,7 +35,7 @@ function createComputerArray(max){
     return computerNumbers;
 }
 
-
+// creo l'array con i numeri dell'utente
 function createUserArray(max){
     var length = max - 16;
     var userNumber;
@@ -55,6 +57,7 @@ function createUserArray(max){
     return userNumbers;
 }
 
+// calcolo se l'utente ha vinto o meno e i punti fatti
 function totalPoints(max){
     var length = max - 16;
     if (userNumbers.length<length) {

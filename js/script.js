@@ -40,6 +40,7 @@ function createUserArray(max){
     var maxLength = max - 16;
     var userNumber;
     var computerNumbers = createComputerArray(max);
+    console.log(computerNumbers);
     while (userNumbers.length<maxLength && !isRepeated(computerNumbers, userNumber)){
         userNumber = parseInt(prompt('Inserisci un numero compreso tra 1 e ' + max));
         if (!isNaN(userNumber)){ //controllo che il il valore inserito sia un numero
@@ -54,14 +55,14 @@ function createUserArray(max){
             alert('Inserire un numero');
         }
     }
-    return userNumbers;
+    return userNumbers.pop();
 }
 
 // calcolo se l'utente ha vinto o meno e i punti fatti
 function totalPoints(max){
     var maxLength = max - 16;
     if (userNumbers.length<maxLength) {
-        var points = userNumbers.length - 1;
+        var points = userNumbers.length;
         alert('Hai perso. Punteggio totale: ' + points + ' punti');
     } else {
         alert('Hai vinto');

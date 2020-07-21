@@ -38,11 +38,10 @@ function createComputerArray(max){
 // creo l'array con i numeri dell'utente
 function createUserArray(max){
     var maxLength = max - 16;
-    var userNumber;
     var computerNumbers = createComputerArray(max);
     console.log(computerNumbers);
     while (userNumbers.length<maxLength && !isRepeated(computerNumbers, userNumber)){
-        userNumber = parseInt(prompt('Inserisci un numero compreso tra 1 e ' + max));
+        var userNumber = parseInt(prompt('Inserisci un numero compreso tra 1 e ' + max));
         if (!isNaN(userNumber)){ //controllo che il il valore inserito sia un numero
             if (!isRepeated(userNumbers,userNumber) && (0<userNumber) && (userNumber<=max)){ // controllo che il valore inserito sia compreso tra 0 e il numero massimo ammesso e che non sia già stato inserito
                 userNumbers.push(userNumber);
